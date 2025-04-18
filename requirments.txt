@@ -1,0 +1,5 @@
+express csv 
+nodemon -  start server doing: node server.js 
+npm install pg 
+
+

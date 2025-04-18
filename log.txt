@@ -1,3 +1,15 @@
+server + routing
+
 https://expressjs.com/en/starter/installing.html
 https://expressjs.com/en/guide/writing-middleware.html
 https://www.youtube.com/watch?v=6yHt0nFvtvo
+
+csv: 
+
+https://www.youtube.com/watch?v=MJ3DQa7utFA
+https://www.npmjs.com/package/csv-parse
+https://www.youtube.com/watch?app=desktop&v=pHxx4j4atuw
+
+
+db: 
+
