@@ -5,6 +5,7 @@ require('dotenv').config({   //loads .env
 
 const { Pool } = require('pg');
 
+
 //env not working. hardcoded for now. 
 const pool = new Pool({
     host: 'localhost',
@@ -20,16 +21,21 @@ const pool = new Pool({
 
 async function testConnection(){
     try {
-        const result = await pool.query ('SELECT NOW()'); 
+        const testResult = await pool.query ('SELECT NOW()');
+
+        console.log(testResult.rows); 
         console.log('Database connected successfully'); 
     }
     catch (err) {
-        console.error("Failed to connect to Database", err);
+        console.error("Failed to connect to Database");
 
     }
 }
 
 testConnection();
+
+
+
 
 
 

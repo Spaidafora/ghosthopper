@@ -1,5 +1,6 @@
 express csv 
 nodemon -  start server doing: node server.js 
-npm install pg 
-
+pg 
+dotenv 
+php - brew install php
 

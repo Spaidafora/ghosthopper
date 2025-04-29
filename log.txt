@@ -13,3 +13,28 @@ https://www.youtube.com/watch?app=desktop&v=pHxx4j4atuw
 
 db: 
 
+https://node-postgres.com/features/connecting
+https://www.npmjs.com/package/dotenv
+https://www.youtube.com/watch?v=O4bNwkC1ZxA
+https://node-postgres.com/apis/pool
+https://node-postgres.com/apis/client
+
+
+https://www.w3schools.com/sql/sql_insert.asp
+https://stackoverflow.com/questions/67717559/using-async-await-with-array-map-to-insert-data-into-a-postgres-table
+
+
+api:
+
+https://expressjs.com/en/5x/api.html
+https://www.youtube.com/watch?v=7nm1pYuKAhY
+https://www.youtube.com/watch?v=pKd0Rpw7O48
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+
+
+php: 
+
+https://stackoverflow.com/questions/9659079/file-get-contents-vs-curl-for-invoking-apis-with-php
+https://www.youtube.com/watch?v=wMyP-q3nPd4
+https://www.php.net/manual/en/function.file-get-contents.php
