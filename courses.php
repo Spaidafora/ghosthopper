@@ -69,7 +69,7 @@ echo '<td>' . 'End Date' . '</td>';
 echo '<td>' . 'Max Capacity' . '</td>';
 echo '<td>' . 'Total Enrolled' . '</td>';
 echo '<td>' . 'Total Waitlisted' . '</td>';
-echo '<td>' . 'Overview' . '</td>';
+//echo '<td>' . 'Overview' . '</td>';
 echo '</tr>';
 echo '</thread>';
 echo '<tbody>';
@@ -91,7 +91,7 @@ foreach($result as$course){
   echo '<td>' . $course['max_capacity'] . '</td>';
   echo '<td>' . $course['total_enrolled'] . '</td>';
   echo '<td>' . $course['total_waitlisted'] . '</td>';
-  echo '<td>' . '<a href="url">' . 'Overview' . '</a>' . '<td>';  
+  //echo '<td>' . '<a href="url">' . 'Overview' . '</a>' . '<td>';  
   echo '</tr>';
   }
 
