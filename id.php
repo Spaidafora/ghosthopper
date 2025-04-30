@@ -10,9 +10,11 @@
 
 
 <?php 
-//cant use node to run php 
 
-$courseId = 2020; 
+
+
+$courseId = $_GET['courseId']; 
+
 echo "php is running"; 
 echo "<br>";
 $apiUrl = file_get_contents('http://localhost:3000/api/courses/' . $courseId); //??
@@ -41,12 +43,13 @@ foreach ($result as $course){
     echo "Max Capacity: " . $course['max_capacity'] . "<br>";
     echo "Total Enrolled: " . $course['total_enrolled'] . "<br>";
     echo "Total Waitlisted: " . $course['total_waitlisted'] . "<br>";
-    echo '</div>';
     echo "<br>";
     echo "<br>";
     echo "<br>";
     echo "<br>";
     echo "<br>";
+
+    
 }
 
 
@@ -56,9 +59,11 @@ foreach ($result as $course){
 
 
 
-// php cant run in port 3000 where node is running 
-// run in port 8000 -> chat: php -S localhost:8000
-// http://localhost:8000/php-client.php
+
+
+//http://localhost:8000/id.php?courseId=2020
+//node running in port 3000, can't run php there. 
+// php running in port 8000 : php -S localhost:8000
 
 
 ?>

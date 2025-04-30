@@ -55,7 +55,7 @@ foreach ($result as $course){
 
 // php cant run in port 3000 where node is running 
 // run in port 8000 -> chat: php -S localhost:8000
-// http://localhost:8000/php-client.php
+// http://localhost:8000/courses.php
 
 
 ?>
