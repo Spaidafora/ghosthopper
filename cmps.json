@@ -1,0 +1,202 @@
+[
+    {
+      "course_code": "CMPS 1200",
+      "title": "Basic Computer Skills",
+      "units": 3,
+      "description": "This course covers computer skills essential to success at a university. Specific applications include the Microsoft Office suite of tools: Word, Excel, PowerPoint and Access. The course material is based on Windows and Microsoft Office. Each week lecture meets for 150 minutes.",
+      "typically_offered": ["Fall", "Spring"]
+    },
+
+    {
+      "course_code": "CMPS 2010",
+      "title": "Programming I: Programming Fundamentals",
+      "units": 4,
+      "description": "Introduces the fundamentals of procedural programming and object-oriented programming. Topics include: data types, control structures, functions, arrays, I/O, pointers and dynamic memory allocation, and features of object-oriented programming. The mechanics of compiling, linking, running, debugging and testing within a particular programming environment are covered. Ethical issues and a historical perspective of programming within the context of computer science as a discipline are given. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": [
+        "C- or better in MATH 1010 or MATH 1055",
+        "or prerequisite or corequisite: MATH 1030 or MATH 1040 or MATH 1050 or MATH 1060 or MATH 2310 or MATH 2510"
+      ],
+      "typically_offered": ["Fall", "Spring"]
+    },
+    {
+      "course_code": "CMPS 2020",
+      "title": "Programming II: Data Structures and Algorithms",
+      "units": 4,
+      "description": "Builds on the foundation provided by CMPS 2010 to introduce the fundamental concepts of data structures and algorithms that proceed from within the framework of object-oriented programming technology. Topics include: recursion, fundamental data structures (including lists, stacks, queues, hash tables, trees and graphs) and basics of algorithmic analysis. Necessary components of object-oriented programming method will be introduced. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": [
+        "CMPS 2010 with a grade of C- or better",
+        "and MATH 1030 or 1040 or 1050 or 1055 or 1060 or 2310 or 2510 with a grade of C- or better"
+      ],
+      "typically_offered": ["Fall", "Spring"]
+    },
+
+    {
+      "course_code": "CMPS 2120",
+      "title": "Discrete Structures",
+      "units": 4,
+      "description": "Discrete structures and applications in computer science. Provides an introduction to proof techniques, propositional and predicate logic, functions, relations, sets, big-oh notation, counting techniques, summations, recursive definitions, recurrence relations, discrete probability and simple circuit logic. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": [
+        "CMPS 2010 with a grade of C- or better",
+        "and MATH 1030 or 1040 or 1050 or 1055 or 1060 or 2310 or 2510 with a grade of C- or better"
+      ],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 2240",
+      "title": "Computer Architecture I: Assembly Language Programming",
+      "units": 4,
+      "description": "Introduction to computer architecture and assembly language programming. Covers number systems and data representation, CISC and RISC instruction set architectures, internal organization of a computer, and basics of logic design. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": [
+        "CMPS 2010 with a grade of C- or better",
+        "and MATH 1030 or 1040 or 1050 or 1055 or 1060 or 2310 or 2510 with a grade of C- or better"
+      ],
+      "course_fee": true,
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 2650",
+      "title": "Linux Environment and Administration",
+      "units": 4,
+      "description": "This course covers common Linux commands, shell scripting, regular expressions, tools and the applications used in a Linux programming environment. The tools to be introduced include make utility, a debugger, advanced text editing and text processing (vi, sed, tr). These basic skills are extended to cover the knowledge and skills critical to administering a multi-user, networked Linux system. Administrative topics include kernel and network configuration, managing daemons, devices, and critical processes, controlling startup and shutdown events, account management, installing software, security issues, shell scripting. Many concepts will be demonstrated during hands-on labs. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 2680",
+      "title": "Web Programming I: Client-side Web Programming",
+      "units": 3,
+      "description": "An introduction to webpage layout and design with HTML and CSS and client-side web programming with Javascript. Students will design and create a webpage using technologies covered in the course. Each week lecture meets for 150 minutes.",
+      "typically_offered": ["Fall", "Spring", "Summer"]
+    },
+    {
+      "course_code": "CMPS 3120",
+      "title": "Algorithm Analysis",
+      "units": 3,
+      "description": "Algorithm analysis, asymptotic notation, hashing, hash tables, scatter tables, and AVL and B-trees, brute-force and greedy algorithms, divide-and-conquer algorithms, dynamic programming, randomized algorithms, graphs and graph algorithms, and distributed algorithms. Each week lecture meets for 100 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better", "CMPS 2120"],
+      "typically_offered": []
+    },
+
+    {
+      "course_code": "CMPS 3140",
+      "title": "Theory of Computation",
+      "units": 3,
+      "description": "An introduction to computability theory to include finite automata, push-down automata, formal grammars, Turing machines, decidability, intractability and NP-completeness. Each week lecture meets for 100 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 3120"],
+      "typically_offered": ["Spring"]
+    },
+
+    {
+      "course_code": "CMPS 3240",
+      "title": "Computer Architecture II: Organization",
+      "units": 4,
+      "description": "This course focuses on the design of the CPU and computer system at a functional level. Topics include CPU instruction sets and functional units, control unit design, interrupt handling and DMA, I/O support, memory hierarchy, virtual memory, buses and bus timing, and an introduction to instruction level parallelism, multithreading, and multiprocessing. Hardware security issues will also be discussed. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2240 or ECE 3200"],
+      "course_fee": true,
+      "typically_offered": []
+    },
+
+
+    {
+      "course_code": "CMPS 3350",
+      "title": "Software Engineering",
+      "units": 4,
+      "description": "This course is a general introduction to Software Engineering. The course will cover the specification, development, management, and evolution of complex software systems. Students will learn how to cost-effectively apply the methods and theory from Computer Science to solve difficult problems. The course presents a broad perspective on software and system engineering and surveys a wide spectrum of tools and techniques. Students are required to complete a project as part of a small software engineering team. Students will form groups and choose a software project early in the course, then apply methodologies learned in the course to complete their project. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better"],
+      "typically_offered": []
+    },
+  
+    {
+      "course_code": "CMPS 3390",
+      "title": "Application Development",
+      "units": 4,
+      "description": "Planning and design of applications for desktop and mobile platforms. Concepts include frameworks, networks and client/server protocols, data management, and user interface and experience. Students will deploy and test projects to understand current methods for providing services to the client. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better"],
+      "typically_offered": []
+    },
+
+    {
+      "course_code": "CMPS 3420",
+      "title": "Database Systems",
+      "units": 4,
+      "description": "Basic issues in data modeling, database application software design and implementation. File organizations, relational model, relational database management systems, and query languages are addressed in detail. Two-tier architecture, three-tier architecture and development tools are covered. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better", "CMPS 2120 or MATH 3000"],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 3480",
+      "title": "Computer Graphics",
+      "units": 4,
+      "description": "Introduction to computer graphics hardware, animation, two-dimensional transformations, basic concepts of computer graphics, theory and implementation. Use of graphics API's such as DirectX or OpenGL. Developing 2D graphics applications software. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better"],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 3500",
+      "title": "Programming Languages",
+      "units": 3,
+      "description": "An examination of underlying concepts in high level programming languages and techniques for the implementation of a representative sample of such languages with regard to considerations such as typing, block structure, scope, recursion, procedures invocation, context, binding, and modularity. Features of OOP, thread, synchronization and concurrency, functional function will be discussed. Each week lecture meets for 100 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better"],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 3560",
+      "title": "Artificial Intelligence",
+      "units": 3,
+      "description": "This course offers an introduction to design of intelligent agents. Emphasis is placed on algorithms for inference in formal logic systems, machine learning, and optimization with evolutionary computation. Each week lecture meets for 100 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better", "CMPS 2120 or MATH 3000"],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 3600",
+      "title": "Operating Systems",
+      "units": 4,
+      "description": "A study of the introductory concepts in operating systems: historical development of batch, multi-programmed, and interactive systems; virtual memory, process, and thread management; interrupt and trap handlers, abstraction layer, message passing; kernel tasks and kernel design issues; signals and interprocess communication; synchronization, concurrency, and deadlock problems. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better"],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 3620",
+      "title": "Computer Networks",
+      "units": 4,
+      "description": "A study of the theory of computer networking focusing on the TCP/IP Internet protocols and covering the five layers: physical, data link, network, transport, and application. Communication on wired, wireless, and cellular networks will be covered. The course will introduce secure communication and its incorporation into different layers of the model. As part of the laboratory component, students will learn systems programming as it relates to interprocess communication over sockets, I/O handling, process and thread control, and the development of client/server programs. Each week lecture meets for 150 minutes and lab meets for 150 minutes.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better"],
+      "typically_offered": []
+    },
+
+    {
+      "course_code": "CMPS 4550",
+      "title": "Applied Machine Learning",
+      "units": 4,
+      "description": "Students will learn the basics of machine learning including supervised vs. unsupervised learning, regression, dimensionality reduction and reinforcement learning. Focus will be given to experimental setup including normalization, evaluation criteria and outlier detection.",
+      "prerequisites": ["MATH 3200"],
+      "cross_listed": ["ECE 4550"],
+      "typically_offered": []
+    },
+
+    {
+      "course_code": "CMPS 4620",
+      "title": "Network and Computer Security",
+      "units": 4,
+      "description": "Fundamentals of network and computer security and information assurance. Topics include basic cryptography, authentication, access control, formal security policies, trusted OS design, and network attacks.",
+      "prerequisites": ["CMPS 2020 with a grade of C- or better", "CMPS 3620 or CMPS 3650"],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 4910",
+      "title": "Senior Project I",
+      "units": 2,
+      "description": "Preliminary phase of the senior capstone project. Planning, literature review, and preparation of a substantial project with defined milestones.",
+      "prerequisites": ["At least 12 units of 3000- or 4000-level CMPS coursework"],
+      "typically_offered": []
+    },
+    {
+      "course_code": "CMPS 4928",
+      "title": "Senior Project II",
+      "units": 2,
+      "description": "Completion and presentation of the senior capstone project. Includes written report and interdisciplinary reflection.",
+      "prerequisites": ["At least 90 units", "Completion of JYDR", "CMPS 4910"],
+      "general_education_attribute": "Capstone",
+      "typically_offered": []
+    }
+  ]
+    
