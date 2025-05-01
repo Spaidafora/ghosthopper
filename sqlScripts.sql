@@ -2,15 +2,18 @@
 
 
 
+
 CREATE TABLE courses (
   key SERIAL PRIMARY KEY,
   subject TEXT,
   id TEXT,
   title TEXT,
+  courseDescription TEXT,
   units TEXT,
   instructor TEXT,
   email TEXT,
   location TEXT,
+  coursePrereq TEXT,
   meeting_start TEXT,
   meeting_end TEXT,
   weekdays TEXT,

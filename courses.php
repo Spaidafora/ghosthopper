@@ -23,18 +23,19 @@ $result = json_decode($apiUrl, true); //assoc array
 
 //print_r($result);
 
+/*
 
-// how to make it route to localhost/courses    ?
-/* 
-foreach ($result as$course){
+foreach ($result as $course){
     echo '<div class="subject">';
     echo "Subject: " . $course['subject'] .  "<br>"; 
     echo "ID: " .$course['id'] . "<br>"; 
     echo "Title: " .$course['title'] . "<br>"; 
+    echo "Course Description: " .$course['coursedescription'] . "<br>"; 
     echo "Inits: " .$course['units'] . "<br>"; 
     echo "Instructor: " .$course['instructor'] . "<br>"; 
     echo "Email: " .$course['email'] . "<br>";
     echo "Location: " .$course['location'] . "<br>";
+    echo "Course Prerequisites " .$course['courseprereq'] . "<br>";
     echo "Meeting Start: " .$course['meeting_start'] . "<br>";
     echo "Meeting End: " .$course['meeting_end'] . "<br>";
     echo "Week Days: " .$course['weekdays'] . "<br>";
@@ -57,10 +58,12 @@ echo '<tr>';
 echo '<td>' . 'Subject' . '</td>';
 echo '<td>'. 'ID' . '</td>';
 echo '<td>' . 'Title'  . '</td>';
+echo '<td>' . 'Course Description'  . '</td>';
 echo '<td>' . 'Units' . '</td>';
 echo '<td>' . 'Instructor' . '</td>';
 echo '<td>' . 'Email' . '</td>';
 echo '<td>' . 'Location' . '</td>';
+echo '<td>' . 'Course Prequisites' . '</td>';
 echo '<td>' . 'Meeting Start' . '</td>';
 echo '<td>' . 'Meeting End' . '</td>';
 echo '<td>' . 'Week Days' . '</td>';
@@ -74,15 +77,17 @@ echo '</tr>';
 echo '</thread>';
 echo '<tbody>';
 
-foreach($result as$course){
+foreach($result as $course){
   echo '<tr>';
   echo '<td>' . $course['subject'] . '</td>';
   echo '<td>' . $course['id'] . '</td>';
   echo '<td>' . $course['title'] . '</td>';
+  echo '<td>' . $course['coursedescription'] . '</td>';
   echo '<td>' . $course['units'] . '</td>';
   echo '<td>' . $course['instructor'] . '</td>';
   echo '<td>' . $course['email'] . '</td>';
-  echo '<td>' . $course['location'] . '</td>';
+  echo '<td>' . $course['location'] . '</td>'; 
+  echo '<td>' . $course['courseprereq'] . '</td>';
   echo '<td>' . $course['meeting_start'] . '</td>';
   echo '<td>' . $course['meeting_end'] . '</td>';
   echo '<td>' . $course['weekdays'] . '</td>';

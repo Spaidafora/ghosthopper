@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+  
   <h1>Course ID</h1>
 
 
@@ -61,6 +62,7 @@ echo '<tr>';
 echo '<td>' . 'Subject' . '</td>';
 echo '<td>'. 'ID' . '</td>';
 echo '<td>' . 'Title'  . '</td>';
+echo '<td>' . 'Course Description'  . '</td>';
 echo '<td>' . 'Units' . '</td>';
 echo '<td>' . 'Instructor' . '</td>';
 echo '<td>' . 'Email' . '</td>';
@@ -82,8 +84,10 @@ foreach($result as$course){
   echo '<td>' . $course['subject'] . '</td>';
   echo '<td>' . $course['id'] . '</td>';
   echo '<td>' . $course['title'] . '</td>';
+  echo '<td>' . $course['coursedescription'] . '</td>';
   echo '<td>' . $course['units'] . '</td>';
   echo '<td>' . $course['instructor'] . '</td>';
+  echo '<td>' . $course['courseprereq'] . '</td>';
   echo '<td>' . $course['email'] . '</td>';
   echo '<td>' . $course['location'] . '</td>';
   echo '<td>' . $course['meeting_start'] . '</td>';
