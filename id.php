@@ -8,16 +8,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+  
   <h1>Course ID</h1>
 
 
 <?php 
 
 
+//$_GET gets data from the URL
 
-$courseId = $_GET['courseId']; 
+$courseId = $_GET['courseId'];   
 
-echo "php is running"; 
+//echo "php is running"; 
 echo "<br>";
 $apiUrl = file_get_contents('http://localhost:3000/api/courses/' . $courseId); //??
 $result = json_decode($apiUrl, true); //assoc array
@@ -61,6 +63,7 @@ echo '<tr>';
 echo '<td>' . 'Subject' . '</td>';
 echo '<td>'. 'ID' . '</td>';
 echo '<td>' . 'Title'  . '</td>';
+echo '<td>' . 'Course Description'  . '</td>';
 echo '<td>' . 'Units' . '</td>';
 echo '<td>' . 'Instructor' . '</td>';
 echo '<td>' . 'Email' . '</td>';
@@ -82,8 +85,10 @@ foreach($result as$course){
   echo '<td>' . $course['subject'] . '</td>';
   echo '<td>' . $course['id'] . '</td>';
   echo '<td>' . $course['title'] . '</td>';
+  echo '<td>' . $course['coursedescription'] . '</td>';
   echo '<td>' . $course['units'] . '</td>';
   echo '<td>' . $course['instructor'] . '</td>';
+  echo '<td>' . $course['courseprereq'] . '</td>';
   echo '<td>' . $course['email'] . '</td>';
   echo '<td>' . $course['location'] . '</td>';
   echo '<td>' . $course['meeting_start'] . '</td>';
@@ -97,10 +102,10 @@ foreach($result as$course){
   echo '</tr>';
   }
 
-  echo '</table>';
+  echo '</table>'; 
   echo '</table>';
 
-require_once('cmps.php');
+ //require_once('cmps.php');
   
 //http://localhost:8000/id.php?courseId=2020
 //node running in port 3000, can't run php there. 

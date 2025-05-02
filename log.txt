@@ -23,7 +23,7 @@ https://node-postgres.com/apis/client
 https://www.w3schools.com/sql/sql_insert.asp
 https://stackoverflow.com/questions/67717559/using-async-await-with-array-map-to-insert-data-into-a-postgres-table
 
-
+https://node-postgres.com/apis/pool
 api:
 
 https://expressjs.com/en/5x/api.html
@@ -38,3 +38,15 @@ php:
 https://stackoverflow.com/questions/9659079/file-get-contents-vs-curl-for-invoking-apis-with-php
 https://www.youtube.com/watch?v=wMyP-q3nPd4
 https://www.php.net/manual/en/function.file-get-contents.php
+
+
+
+server db/ debug:
+
+ps aux | grep postgres 
+brew services list
+
+brew services start postgresql@14
+
+
+

@@ -2,15 +2,18 @@
 
 
 
+
 CREATE TABLE courses (
   key SERIAL PRIMARY KEY,
   subject TEXT,
   id TEXT,
   title TEXT,
+  courseDescription TEXT,
   units TEXT,
   instructor TEXT,
   email TEXT,
   location TEXT,
+  coursePrereq TEXT,
   meeting_start TEXT,
   meeting_end TEXT,
   weekdays TEXT,
@@ -20,6 +23,19 @@ CREATE TABLE courses (
   total_enrolled TEXT, 
   total_waitlisted TEXT
 );
+
+
+
+UPDATE courses
+SET meeting_start = TO_CHAR(TO_TIMESTAMP(meeting_start, 'HH:MI:SS.USPM'), 'HH:MI AM'),
+    meeting_end = TO_CHAR(TO_TIMESTAMP(meeting_end, 'HH:MI:SS.USPM'), 'HH:MI AM');
+
+
+SELECT *
+FROM courses
+WHERE NOW()::time 
+
+
 
 --debug notes--
 

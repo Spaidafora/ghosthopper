@@ -8,33 +8,49 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  <h1>Courses</h1>
+<h1>Courses</h1>
 
+ <div class=search> 
+
+    <form method="post">
+        <input type="text" placeholder="Search...">
+        <input type="submit"  name="submit" value="Search"/>
+    </form> 
+</div>
 
 <?php 
-//cant use node to run php 
 
-echo "php is running"; 
+
+
 echo "<br>";
-$apiUrl = file_get_contents('http://localhost:3000/api/courses');
-$result = json_decode($apiUrl, true); //assoc array
+$apiUrl = 'http://localhost:3000/api/courses';
+$response = @file_get_contents($apiUrl); //json
+
+if ($response === FALSE) {
+  //echo '<p>Error: Could not connect to API. </p>';
+  die("Error: Could not connect to API."); 
+} else {
+  $result = json_decode($response, true); //assoc array
+} 
+  
 
 
 
 //print_r($result);
 
+/*
 
-// how to make it route to localhost/courses    ?
-/* 
-foreach ($result as$course){
+foreach ($result as $course){
     echo '<div class="subject">';
     echo "Subject: " . $course['subject'] .  "<br>"; 
     echo "ID: " .$course['id'] . "<br>"; 
     echo "Title: " .$course['title'] . "<br>"; 
+    echo "Course Description: " .$course['coursedescription'] . "<br>"; 
     echo "Inits: " .$course['units'] . "<br>"; 
     echo "Instructor: " .$course['instructor'] . "<br>"; 
     echo "Email: " .$course['email'] . "<br>";
     echo "Location: " .$course['location'] . "<br>";
+    echo "Course Prerequisites " .$course['courseprereq'] . "<br>";
     echo "Meeting Start: " .$course['meeting_start'] . "<br>";
     echo "Meeting End: " .$course['meeting_end'] . "<br>";
     echo "Week Days: " .$course['weekdays'] . "<br>";
@@ -51,16 +67,20 @@ foreach ($result as$course){
     echo "<br>";
 }
 */
+
+
 echo '<table class="table table-striped">';
 echo '<thread>';
 echo '<tr>';
 echo '<td>' . 'Subject' . '</td>';
 echo '<td>'. 'ID' . '</td>';
 echo '<td>' . 'Title'  . '</td>';
+echo '<td>' . 'Course Description'  . '</td>';
 echo '<td>' . 'Units' . '</td>';
 echo '<td>' . 'Instructor' . '</td>';
 echo '<td>' . 'Email' . '</td>';
 echo '<td>' . 'Location' . '</td>';
+echo '<td>' . 'Course Prequisites' . '</td>';
 echo '<td>' . 'Meeting Start' . '</td>';
 echo '<td>' . 'Meeting End' . '</td>';
 echo '<td>' . 'Week Days' . '</td>';
@@ -69,29 +89,33 @@ echo '<td>' . 'End Date' . '</td>';
 echo '<td>' . 'Max Capacity' . '</td>';
 echo '<td>' . 'Total Enrolled' . '</td>';
 echo '<td>' . 'Total Waitlisted' . '</td>';
+echo '<td>' . '      ' . '</td>';
 //echo '<td>' . 'Overview' . '</td>';
 echo '</tr>';
 echo '</thread>';
 echo '<tbody>';
 
-foreach($result as$course){
+foreach($result as $course){
   echo '<tr>';
-  echo '<td>' . $course['subject'] . '</td>';
-  echo '<td>' . $course['id'] . '</td>';
-  echo '<td>' . $course['title'] . '</td>';
-  echo '<td>' . $course['units'] . '</td>';
-  echo '<td>' . $course['instructor'] . '</td>';
-  echo '<td>' . $course['email'] . '</td>';
-  echo '<td>' . $course['location'] . '</td>';
-  echo '<td>' . $course['meeting_start'] . '</td>';
-  echo '<td>' . $course['meeting_end'] . '</td>';
-  echo '<td>' . $course['weekdays'] . '</td>';
-  echo '<td>' . $course['start_date'] . '</td>';
-  echo '<td>' . $course['end_date'] . '</td>';
-  echo '<td>' . $course['max_capacity'] . '</td>';
-  echo '<td>' . $course['total_enrolled'] . '</td>';
-  echo '<td>' . $course['total_waitlisted'] . '</td>';
+  echo '<td>' . htmlspecialchars($course['subject']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['id']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['title']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['coursedescription']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['units']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['instructor']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['email']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['location']) . '</td>'; 
+  echo '<td>' . htmlspecialchars($course['courseprereq']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['meeting_start']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['meeting_end']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['weekdays']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['start_date']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['end_date']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['max_capacity']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['total_enrolled']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['total_waitlisted']) . '</td>';
   //echo '<td>' . '<a href="url">' . 'Overview' . '</a>' . '<td>';  
+  echo '<td><a href="id.php?courseId=' . $course['id'] . '" class="btn btn-sm btn-primary">View</a></td>';
   echo '</tr>';
   }
 
