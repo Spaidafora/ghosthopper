@@ -35,18 +35,6 @@ SELECT *
 FROM courses
 WHERE NOW()::time 
 
-SELECT *
-FROM courses
-WHERE NOW()::time BETWEEN 
-      TO_TIMESTAMP(meeting_start, 'HH12:MIAM')::time AND 
-      TO_TIMESTAMP(meeting_end, 'HH12:MIAM')::time;
-
-
-SELECT *
-FROM courses
-WHERE NOW() TIME 14:45 BETWEEN 
-      TO_TIMESTAMP(meeting_start, 'HH12:MIAM')::time AND 
-      TO_TIMESTAMP(meeting_end, 'HH12:MIAM')::time;
 
 
 --debug notes--
