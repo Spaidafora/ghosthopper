@@ -24,6 +24,31 @@ CREATE TABLE courses (
   total_waitlisted TEXT
 );
 
+
+
+UPDATE courses
+SET meeting_start = TO_CHAR(TO_TIMESTAMP(meeting_start, 'HH:MI:SS.USPM'), 'HH:MI AM'),
+    meeting_end = TO_CHAR(TO_TIMESTAMP(meeting_end, 'HH:MI:SS.USPM'), 'HH:MI AM');
+
+
+SELECT *
+FROM courses
+WHERE NOW()::time 
+
+SELECT *
+FROM courses
+WHERE NOW()::time BETWEEN 
+      TO_TIMESTAMP(meeting_start, 'HH12:MIAM')::time AND 
+      TO_TIMESTAMP(meeting_end, 'HH12:MIAM')::time;
+
+
+SELECT *
+FROM courses
+WHERE NOW() TIME 14:45 BETWEEN 
+      TO_TIMESTAMP(meeting_start, 'HH12:MIAM')::time AND 
+      TO_TIMESTAMP(meeting_end, 'HH12:MIAM')::time;
+
+
 --debug notes--
 
 --database not serving 

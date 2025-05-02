@@ -3,19 +3,10 @@
   //  path: './conn.env'
 //});                         
 
-const { Pool } = require('pg');
+//const { Pool } = require('pg');
+const pool = require('./database.js'); //connect to db
 const {parse} = require('csv-parse')
 const fs = require('fs') //local file 
-
-//env not working. hardcoded for now. 
-const pool = new Pool({
-    host: 'localhost',
-    user: 'postgres',
-    database: 'ghostDB',
-    password: 'postgres',  
-    port: 5432
-
-});
 
 
 
@@ -74,6 +65,8 @@ const parser = parse({columns: true}, async function (err, records) {
         maxCapacity, totalEnrolled, totalWaitlisted } 
     
     });
+
+    console.log("Filtered: ", filtered);
     // temp so we don't duplicate table
 
     await pool.query('DELETE FROM courses'); 

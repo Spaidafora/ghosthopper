@@ -1,5 +1,6 @@
 var express = require('express'); 
 const pool = require('./database.js');
+const searchCourses = require('./search.js'); // search function
 var app = express(); 
 
 app.use(express.json()) 
@@ -12,34 +13,16 @@ app.use(express.json())
 
 //home page
 app.get('/', (req, res) => {
-    res.send("Hello World")
-
+    res.send("hello world") 
 })
 
 //sample
-//const courses = [
-  //  { id: 1, name: "Intro to CS" },
- //   { id: 2, name: "Web Development" },
-//];
 
 
-// dynamic  urls using params 
+// api calls +  dynamic  urls using params 
 
 
-// get departments 
-app.get("/departments", (req, res) => {
-    res.send("Departments list")
-})
-
-// courses by dept
-app.get("/api/courses/department/:dept", (req, res) => {
-    res.send(`Courses per dept: ${req.params.dept}`)
-})
-
-
-// courses 
-
-
+//courses
 app.get('/api/courses', async (req, res) => {
     console.log('Got a request at /api/courses');
     try {
@@ -78,10 +61,49 @@ app.get("/api/courses/:id", async (req, res) => {
 })
 
 
-// ability to search by prof, id, title, keyword, desc etc.
-app.get("/search", (req, res) => {
-    res.send("Ability to search anything")
+// get all departments 
+app.get("/departments", (req, res) => {
+    res.send("Departments list")
 })
+
+// courses by dept name
+app.get("/api/courses/department/:dept", (req, res) => {
+    res.send(`Courses per dept: ${req.params.dept}`)
+})
+
+
+
+//courses by time 
+
+app.get("/api/courses/currently", async (req, res) => {
+    console.log('Got a request at /api/courses/currently');
+    try {
+        
+        const results = await pool.query(
+            `SELECT *
+            FROM courses
+            WHERE NOW()::time BETWEEN 
+            TO_TIMESTAMP(meeting_start, 'HH12:MIAM')::time AND 
+            TO_TIMESTAMP(meeting_end, 'HH12:MIAM')::time`
+        ); 
+        res.json(results.rows);  //php fetch 
+    }
+    catch (error) { // 404 not found - server cannot find req resource
+       // console.error(error); 
+        console.log('Our servers cannot this data!')
+        res.status(404).send("Couldn't find that in the DB-t");
+    }
+    
+})
+
+
+
+
+
+
+// search function from search.js
+app.get("/search", searchCourses);
+
 
 //const port = process.env.PORT || 3000; 
 const port = 3000; 

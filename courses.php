@@ -8,16 +8,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  <h1>Courses</h1>
+<h1>Courses</h1>
 
+ <div class=search> 
+
+    <form method="post">
+        <input type="text" placeholder="Search...">
+        <input type="submit"  name="submit" value="Search"/>
+    </form> 
+</div>
 
 <?php 
-//cant use node to run php 
 
-echo "php is running"; 
+
+
 echo "<br>";
-$apiUrl = file_get_contents('http://localhost:3000/api/courses');
-$result = json_decode($apiUrl, true); //assoc array
+$apiUrl = 'http://localhost:3000/api/courses';
+$response = @file_get_contents($apiUrl); //json
+
+if ($response === FALSE) {
+  //echo '<p>Error: Could not connect to API. </p>';
+  die("Error: Could not connect to API."); 
+} else {
+  $result = json_decode($response, true); //assoc array
+} 
+  
 
 
 
@@ -52,6 +67,8 @@ foreach ($result as $course){
     echo "<br>";
 }
 */
+
+
 echo '<table class="table table-striped">';
 echo '<thread>';
 echo '<tr>';
@@ -72,6 +89,7 @@ echo '<td>' . 'End Date' . '</td>';
 echo '<td>' . 'Max Capacity' . '</td>';
 echo '<td>' . 'Total Enrolled' . '</td>';
 echo '<td>' . 'Total Waitlisted' . '</td>';
+echo '<td>' . '      ' . '</td>';
 //echo '<td>' . 'Overview' . '</td>';
 echo '</tr>';
 echo '</thread>';
@@ -79,24 +97,25 @@ echo '<tbody>';
 
 foreach($result as $course){
   echo '<tr>';
-  echo '<td>' . $course['subject'] . '</td>';
-  echo '<td>' . $course['id'] . '</td>';
-  echo '<td>' . $course['title'] . '</td>';
-  echo '<td>' . $course['coursedescription'] . '</td>';
-  echo '<td>' . $course['units'] . '</td>';
-  echo '<td>' . $course['instructor'] . '</td>';
-  echo '<td>' . $course['email'] . '</td>';
-  echo '<td>' . $course['location'] . '</td>'; 
-  echo '<td>' . $course['courseprereq'] . '</td>';
-  echo '<td>' . $course['meeting_start'] . '</td>';
-  echo '<td>' . $course['meeting_end'] . '</td>';
-  echo '<td>' . $course['weekdays'] . '</td>';
-  echo '<td>' . $course['start_date'] . '</td>';
-  echo '<td>' . $course['end_date'] . '</td>';
-  echo '<td>' . $course['max_capacity'] . '</td>';
-  echo '<td>' . $course['total_enrolled'] . '</td>';
-  echo '<td>' . $course['total_waitlisted'] . '</td>';
+  echo '<td>' . htmlspecialchars($course['subject']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['id']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['title']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['coursedescription']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['units']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['instructor']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['email']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['location']) . '</td>'; 
+  echo '<td>' . htmlspecialchars($course['courseprereq']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['meeting_start']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['meeting_end']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['weekdays']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['start_date']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['end_date']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['max_capacity']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['total_enrolled']) . '</td>';
+  echo '<td>' . htmlspecialchars($course['total_waitlisted']) . '</td>';
   //echo '<td>' . '<a href="url">' . 'Overview' . '</a>' . '<td>';  
+  echo '<td><a href="id.php?courseId=' . $course['id'] . '" class="btn btn-sm btn-primary">View</a></td>';
   echo '</tr>';
   }
 
