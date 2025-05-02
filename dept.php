@@ -61,7 +61,7 @@ function formatTimeRange($start, $end) {
           <?php foreach ($result as $course): ?>
             <li><a href="class.php?q=<?php echo $course['title']; ?>">
               <?php 
-              echo htmlspecialchars($course['title']) . "<br>";
+               echo "<strong>" . htmlspecialchars($course['title']) . "</strong>" . "<br>";
               //echo htmlspecialchars($course['instructor']) . "<br>";
               //echo htmlspecialchars($course['location']) . "<br>";
               echo formatTimeRange($course['meeting_start'], $course['meeting_end']) . "<br>";

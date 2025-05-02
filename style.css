@@ -44,6 +44,7 @@ nav > div{
     margin: 10px auto;
     border-radius: 15px;
     padding: 5px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
@@ -80,6 +81,13 @@ nav > div{
     font-size: 15pt;
     color: white;
     text-decoration: none;
+}
+
+#classInfo{
+    padding: 0 20px;
+    font-size: 15pt;
+    color: #212121;
+    text-align: left;
 }
 
 #back{
