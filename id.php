@@ -19,7 +19,7 @@
 
 $courseId = $_GET['courseId'];   
 
-echo "php is running"; 
+//echo "php is running"; 
 echo "<br>";
 $apiUrl = file_get_contents('http://localhost:3000/api/courses/' . $courseId); //??
 $result = json_decode($apiUrl, true); //assoc array
