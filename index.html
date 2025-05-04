@@ -7,7 +7,130 @@
     <a href="http://localhost:8000/api/courses.php" class="btn btn-sm btn-primary">courses</a>
 </head>
 <body>
-    
+    <form> 
+        <div class="search"> 
+            <input type="text" id="search" placeholder="Search for a course..." />
+            <button type="submit">Search</button>
+        </div>
+    </form>
+    <div class=" course"> 
+        <div id="container"></div> 
+    </div>
+
+
+
+    <h3 id="subject"> </h2>
+        <p id="title"> </p>
+        <p id="coursedescription"> </p>
+        <p id="units"> </p>
+        <p id="instructor"> </p>
+        <p id="email"> </p>
+        <p id="location"> </p>
+        <p id="prerequisites"> </p>
+        <p id="meeting_start"> </p>
+        <p id="meeting_end"> </p>
+        <p id="weekdays"> </p>
     
 </body>
+
+<script> 
+const input = document.querySelector('input[type="text"]');
+input.addEventListener("input", (event) => {
+    console.log(`The term searched for was ${input.value}`);
+    let subjectTest; 
+    let html = "";  
+    fetch(`/search?searchTerm=${encodeURIComponent(input.value)}`, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            parsedData = data; //expects an array of objects
+            if (!data || data.length === 0){
+                console.log(data);
+                console.log("No results found");
+                document.getElementById("container").innerHTML = "<p>No results found</p>";
+                return;
+            }
+            //clear previous results
+            empty = document.getElementById("container");
+            if (input.value === "") {
+                empty.innerHTML = "";
+            }
+
+            
+            
+            
+
+           
+            parsedData.forEach(courses => { //expects an array of objects
+                html +=  `<div class="container">
+                            <h2>Subject: ${courses.subject}</h2>
+                            <h3>Title: ${courses.title}</h3>
+                            <p>Course Description: ${courses.coursedescription}</p>
+                            <p>Units: ${courses.units}</p>
+                            <p><b>Instructor: ${courses.instructor}</b></p>
+                            <p><b>Email: ${courses.email}</b></p>
+                            <p><b> Location: ${courses.location}</b></p>
+                            <p>Prerequisites: ${courses.courseprereq}</p>
+                            <p>Meeting Start: ${courses.meeting_start}</p>
+                            <p>Meeting End: ${courses.meeting_end}</p>
+                            <p>Weekdays: ${courses.weekdays}</p>
+                         
+                            <a class= "btn btn-primary" href="http://localhost:8000/id.php?courseId=${courses.id}" role="button">View</a>
+
+                            <br>
+                            <hr> 
+                        </div>`;
+    
+        
+                
+            })
+
+            document.getElementById("container").innerHTML = html;
+            //console.log(parsedData)
+           // test = subjectTest[0].subject
+            //test1 = JSON.stringify(parsedData)
+            //console.log(subjectTest[0].subject)  //access obj properties 
+            //document.getElementById("results").innerHTML = test;
+            //console.log(test1);
+            //document.getElementById("results").innerHTML = test1;
+            /* 
+            for (results in parsedData) {
+                console.log(parsedData[results].subject);
+                console.log(parsedData[results].subject);
+                document.getElementById("subject").innerHTML += parsedData[results].subject + "<br>";
+                document.getElementById("title").innerHTML += parsedData[results].title + "<br>";
+                document.getElementById("coursedescription").innerHTML += parsedData[results].coursedescription + "<br>";
+                document.getElementById("units").innerHTML += parsedData[results].units + "<br>";
+                document.getElementById("instructor").innerHTML += parsedData[results].instructor + "<br>";
+                document.getElementById("email").innerHTML += parsedData[results].email + "<br>";
+                document.getElementById("location").innerHTML += parsedData[results].location + "<br>";
+                document.getElementById("prerequisites").innerHTML += parsedData[results].prerequisites + "<br>";
+                document.getElementById("meeting_start").innerHTML += parsedData[results].meeting_start + "<br>";
+                document.getElementById("meeting_end").innerHTML += parsedData[results].meeting_end + "<br>";
+                document.getElementById("weekdays").innerHTML += parsedData[results].weekdays + "<br>";
+                
+
+            } */ 
+
+
+
+        })
+        .catch(error => console.log(error));
+        //if (!response.ok) {
+        //    throw new Error('Network response was not ok');
+        //}
+        //if (response.length === 0) {
+        //    throw new Error('No results found');
+        //}
+       
+    
+});
+
+
+</script> 
+
 </html>
