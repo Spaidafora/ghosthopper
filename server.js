@@ -1,5 +1,6 @@
 var express = require('express'); 
 const pool = require('./database.js');
+const path = require('path'); 
 const searchCourses = require('./search.js'); // search function
 var app = express(); 
 
@@ -8,13 +9,17 @@ app.use(express.json())
 
 
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 
 // routes 
 
 //home page
-app.get('/', (req, res) => {
-    res.send("hello world") 
-})
+//app.get('/', (req, res) => {
+ //   res.send("hello world") 
+//})
 
 //sample
 
