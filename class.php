@@ -70,6 +70,7 @@ foreach ($allCourses as $course) {
         </div>
         <div id="comments">
             <h1>Comments:</h1>
+            <?php require_once('add.php'); ?>
         </div>
     </div>
 </body>
