@@ -11,7 +11,7 @@ $departments = [
 ];
 
 // Simulate Monday at 8:00 AM for testing
-$currentDay = 'F';
+$currentDay = 'M';
 $currentTime = '08:00';
 
 // Filter courses that run today and start later than current time
@@ -49,10 +49,11 @@ function formatTimeRange($start, $end) {
 <div id="deptClass">
 <?php if ($q && isset($departments[$q])): ?>
     <h1><?php echo $departments[$q]['dept']; ?> Department</h1>
-    <p id="time">Simulated time: 
+    <p id="time">
+      <strong> Simulated time: </strong> <br>
       Monday, <?php echo date("F j, Y"); ?> - 8:00 AM
     </p>
-    <h2>Courses Remaining Today:</h2>
+    <h2>Today's Course Schedule:</h2>
     <div id="content">
       <ul id="classes">
         <?php if (count($filteredCourses) > 0): ?>

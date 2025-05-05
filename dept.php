@@ -51,10 +51,11 @@ function formatTimeRange($start, $end) {
 <div id="deptClass">
 <?php if ($q && isset($departments[$q])): ?>
     <h1><?php echo $departments[$q]['dept']; ?> Department</h1>
-    <p id="time">Current time: 
+    <p id="time">
+      <strong> Current time: </strong> <br>
       <?php echo date("l, F j, Y - g:i A"); ?>
     </p>
-    <h2>Todays courses in session:</h2>
+    <h2>Today's Course Schedule:</h2>
     <div id="content">
       <ul id="classes">
         <?php if (count($filteredCourses) > 0): ?>
@@ -62,11 +63,9 @@ function formatTimeRange($start, $end) {
             <li><a href="class.php?q=<?php echo $course['title']; ?>">
               <?php 
                echo "<strong>" . htmlspecialchars($course['title']) . "</strong>" . "<br>";
-              //echo htmlspecialchars($course['instructor']) . "<br>";
-              //echo htmlspecialchars($course['location']) . "<br>";
-              echo formatTimeRange($course['meeting_start'], $course['meeting_end']) . "<br>";
-              echo htmlspecialchars($course['weekdays']) . "<br>";
-              ?>
+               echo formatTimeRange($course['meeting_start'], $course['meeting_end']) . "<br>";
+               echo htmlspecialchars($course['weekdays']) . "<br>";
+               ?>
             </a></li>
           <?php endforeach; ?>
           <?php else: ?>

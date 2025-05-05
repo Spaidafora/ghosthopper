@@ -28,24 +28,49 @@ foreach ($allCourses as $course) {
     <?php require_once("nav.html");?>
 
     <div id="deptClass">
-        <h1><?php echo htmlspecialchars($courseInfo['title']); ?></h1>
+        <h1><?php echo htmlspecialchars($courseInfo['title']) . " - " . htmlspecialchars($course['subject']); ?></h1>
         
         <div id="classInfo">
             <?php if ($courseInfo): ?>
-                <p><strong>Instructor:</strong> <?php echo htmlspecialchars($courseInfo['instructor']); ?></p>
-                <p><strong>Location:</strong> <?php echo htmlspecialchars($courseInfo['location']); ?></p>
+                <p><strong>Course ID:</strong> 
+                <?php echo htmlspecialchars($course['id']); ?>
+                <strong> - Units:</strong> 
+                <?php echo htmlspecialchars($course['units']); ?>
+                </p>
+
+                <p><strong>Instructor:</strong> 
+                <?php echo htmlspecialchars($courseInfo['instructor']); ?></p>
+
+                <p><strong>Instructor email:</strong> 
+                <?php echo htmlspecialchars($courseInfo['email']); ?></p>
+
+                <p><strong>Location:</strong> 
+                <?php echo htmlspecialchars($courseInfo['location']); ?></p>
+
                 <p><strong>Meeting Time:</strong> 
                 <?php
                 echo date("g:i A", strtotime($courseInfo['meeting_start'])) . " - " .
                     date("g:i A", strtotime($courseInfo['meeting_end'])) . "  -  " . $course['weekdays'];
                 ?>
                 
-                <p><strong>Course Description:</strong> <?php echo htmlspecialchars($courseInfo['coursedescription']); ?></p>
+                <p><strong>Course Description:</strong> 
+                <?php echo htmlspecialchars($course['coursedescription']); ?></p>
+
+                <p><strong>Prerequisites:</strong> 
+                <?php echo htmlspecialchars($courseInfo['courseprereq']); ?></p>
+
+                <p><strong>Start Date:</strong> 
+                <?php echo htmlspecialchars($courseInfo['start_date']); ?>
+                <strong> - End date:</strong> 
+                <?php echo htmlspecialchars($courseInfo['end_date']); ?></p>
+                
             <?php else: ?>
             <h2>Course not found.</h2>
             <?php endif; ?>
         </div>
-        
+        <div id="comments">
+            <h1>Comments:</h1>
+        </div>
     </div>
 </body>
 </html>
