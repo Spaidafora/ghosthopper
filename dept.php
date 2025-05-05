@@ -78,6 +78,7 @@ function formatTimeRange($start, $end) {
     <h1>Department not found</h1>
   <?php endif; ?>
 
+  <a href="/" id="back" onclick="javascript:event.target.port=3000">Search all courses</a> <br>
   <a href="grid.php" id="back" >Back to Departments</a>
 </div>
 

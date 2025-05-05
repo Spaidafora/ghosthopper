@@ -104,8 +104,14 @@ nav > div{
     text-decoration: none;
     border-radius: 15px;
     padding: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+   
 }
 
+#index > form{
+    background-color: #CFE3E2;
+}
 
 .cmps {
     background-color: #1E6980;

@@ -14,13 +14,13 @@ $departments = [
 $currentDay = 'M';
 $currentTime = '08:00';
 
-// Filter courses that run today and start later than current time
+//filter based on day and time
 $filteredCourses = array_filter($result, function ($course) use ($currentDay, $currentTime) {
     $days = str_split($course['weekdays']); // e.g., "MWF" -> ['M', 'W', 'F']
     return in_array($currentDay, $days) && $course['meeting_start'] > $currentTime;
 });
 
-// Sort filtered courses by meeting_start time
+//sort by meetinng start time
 usort($filteredCourses, function ($a, $b) {
     return strcmp($a['meeting_start'], $b['meeting_start']);
 });
