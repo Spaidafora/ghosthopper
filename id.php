@@ -105,7 +105,7 @@ foreach($result as$course){
   echo '</table>'; 
   echo '</table>';
 
- //require_once('cmps.php');
+  require_once('add.php');
   
 //http://localhost:8000/id.php?courseId=2020
 //node running in port 3000, can't run php there. 
