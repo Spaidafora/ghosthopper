@@ -13,8 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "All comments have been dumped.";
     } else {
         $data['username'] = trim($_POST['username'] ?? '');
+        $data['id'] = trim($_POST['id'] ?? '');
         $data['comment'] = trim($_POST['comment'] ?? '');
-
+        
+/*
         if (empty($data['username'])) {
             $errors['username'] = "Username required.";
         }
@@ -22,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($data['comment'])) {
             $errors['comment'] = "Comment required.";
         }
-
+*/
         if (empty($errors)) {
             addComment($data);
             $data = [];
@@ -41,6 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1>Leave a Comment</h1>
 
 <form method="post" action="<?= $postTarget ?>">
+    <label for="id">ID:</label><br>
+    <input type="text" name="id" value="<?= htmlspecialchars($data['id'] ?? '') ?>" required>
+    <?= $errors['id'] ?? '' ?><br><br>
+
     <label for="username">Name:</label><br>
     <input type="text" name="username" value="<?= htmlspecialchars($data['username'] ?? '') ?>" required>
     <?= $errors['username'] ?? '' ?><br><br>
@@ -53,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </form>
 
 <hr>
+<!--DUMP aded for testing purposes-->
 <!--
 <form method="post" action="<?= $postTarget ?>">
     <input type="submit" name="dump_comments" value="Dump All Comments" />
@@ -70,7 +77,7 @@ if (isset($message)) {
 $comments = array_reverse(getComments());
 foreach ($comments as $c) {
     echo "<div class='comment'>";
-    echo "<strong>" . htmlspecialchars($c['username']) . "</strong> wrote:<br>";
+    echo "<strong>" . htmlspecialchars($c['username']) . "</strong> wrote about CMPS " . htmlspecialchars($c['id']) . ":" . "<br>";
     echo nl2br(htmlspecialchars($c['comment'])) . "<br>";
     echo "<small>Posted on " . $c['createdAt'] . "</small>";
     echo "</div><hr>";
