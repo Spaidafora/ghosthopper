@@ -39,6 +39,12 @@ https://stackoverflow.com/questions/9659079/file-get-contents-vs-curl-for-invoki
 https://www.youtube.com/watch?v=wMyP-q3nPd4
 https://www.php.net/manual/en/function.file-get-contents.php
 
+search: 
+https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event
+
+https://node-postgres.com/apis/pool
+https://reqbin.com/code/javascript/wc3qbk0b/javascript-fetch-json-example
+https://www.geeksforgeeks.org/difference-between-encodeuri-and-encodeuricomponent-in-javascript/
 
 
 server db/ debug:

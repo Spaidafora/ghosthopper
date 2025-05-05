@@ -13,6 +13,7 @@ function searchCourses(req, res) {
         res.status(400).json({ error: 'No search term provided' });
         return;
     }
+    
 
   
 
@@ -38,21 +39,22 @@ function searchCourses(req, res) {
     const values = `%${searchTerm}%`; // js template literal + wildcard
 
     pool.query(queryText, [values], (error, results) => {
-        
+         // return to fix ERR_HTTP_HEADERS_SENT
         if (error) {
             console.log('Error executing query:', error);
-            res.status(500).send('Error executing query');
+            return res.status(500).send('Error executing query');
         } 
         
         if (results.rows.length == 0) {
             console.log('No results found');
-            res.status(400).json({ error: 'No search term provided' });
+            //return res.json(results.rows); // send back empty array
+            return res.json({ error: 'No results found' });
+        } else {
+            const resultsDisplay = results.rows; // get rows from db
+            console.log('Search results:', resultsDisplay);
+            return res.json(resultsDisplay); // send back to client in json
         }
-        
-       
-        const resultsDisplay = results.rows; // get rows from db
-        console.log('Search results:', resultsDisplay);
-        res.json(resultsDisplay); // send back to client in json
+
         
 
     });
