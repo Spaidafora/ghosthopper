@@ -6,7 +6,7 @@ var app = express();
 
 app.use(express.json()) 
 
-
+app.use(express.static(__dirname)); // serve static files from the current directory i.e logo
 
 
 app.get('/', (req, res) => {

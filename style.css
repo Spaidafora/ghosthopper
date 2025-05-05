@@ -76,9 +76,9 @@ nav > div{
     border-style: solid;
     border-width: 1pt;
     text-align: center;
-    font-size: 15pt;
+    font-size: 14pt;
     color: white;
-    height: 75px;
+    height: 82px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -104,8 +104,10 @@ nav > div{
     text-decoration: none;
     border-radius: 15px;
     padding: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+   
 }
-
 
 .cmps {
     background-color: #1E6980;

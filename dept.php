@@ -14,7 +14,7 @@ $departments = [
   ]
 ];
 
-$currentDay = date("D");
+$currentDay = strtoupper(date("D")[0]);
 $currentTime = date("H:i");
 
 //filter based on day and time
@@ -59,7 +59,7 @@ function formatTimeRange($start, $end) {
     <div id="content">
       <ul id="classes">
         <?php if (count($filteredCourses) > 0): ?>
-          <?php foreach ($result as $course): ?>
+          <?php foreach ($filteredCourses as $course): ?>
             <li><a href="class.php?q=<?php echo $course['title']; ?>">
               <?php 
                echo "<strong>" . htmlspecialchars($course['title']) . "</strong>" . "<br>";
@@ -78,6 +78,7 @@ function formatTimeRange($start, $end) {
     <h1>Department not found</h1>
   <?php endif; ?>
 
+  <a href="/" id="back" onclick="javascript:event.target.port=3000">Search all courses</a> <br>
   <a href="grid.php" id="back" >Back to Departments</a>
 </div>
 
