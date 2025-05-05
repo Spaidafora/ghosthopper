@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--<title>Comment Section</title>-->
     <link type="text/css" rel="stylesheet" href="./style.css">
 </head>
-<body style="background:white;">
+<body>
 
 <h1>Leave a Comment</h1>
 
