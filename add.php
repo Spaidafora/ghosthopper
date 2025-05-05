@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         file_put_contents(COMMENT_FILE, json_encode([])); 
         $message = "All comments have been dumped.";
     } else {
+        //trim function returns a string with whitespace stripped from the beginning and end of string
         $data['username'] = trim($_POST['username'] ?? '');
         $data['id'] = trim($_POST['id'] ?? '');
         $data['comment'] = trim($_POST['comment'] ?? '');
@@ -50,18 +51,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1>Leave a Comment</h1>
 
 <form method="post" action="<?= $postTarget ?>">
-    <label for="id">ID:</label><br>
-    <input type="text" name="id" value="<?= htmlspecialchars($data['id'] ?? '') ?>" required>
-    <?= $errors['id'] ?? '' ?><br><br>
+    <div id="comments">
+        <div id="left">
+            <label for="id">Class ID:</label><br>
+            <input type="text" name="id" value="<?= htmlspecialchars($data['id'] ?? '') ?>" required>
+            <?= $errors['id'] ?? '' ?><br><br>
 
-    <label for="username">Name:</label><br>
-    <input type="text" name="username" value="<?= htmlspecialchars($data['username'] ?? '') ?>" required>
-    <?= $errors['username'] ?? '' ?><br><br>
+            <label for="username">Name:</label><br>
+            <input type="text" name="username" value="<?= htmlspecialchars($data['username'] ?? '') ?>" required>
+            <?= $errors['username'] ?? '' ?><br><br>
+        </div>
 
-    <label for="comment">Comment:</label><br>
-    <textarea name="comment" rows="5" cols="50" required><?= htmlspecialchars($data['comment'] ?? '') ?></textarea>
-    <?= $errors['comment'] ?? '' ?><br><br>
-
+        <div id="right">
+            <label for="comment">Comment:</label><br>
+            <textarea name="comment" rows="5" cols="50" required><?= htmlspecialchars($data['comment'] ?? '') ?></textarea>
+            <?= $errors['comment'] ?? '' ?><br><br>
+        </div>
+    </div>
     <input type="submit" value="Post Comment">
 </form>
 
@@ -80,6 +86,8 @@ if (isset($message)) {
 ?>
 
 <h2>Recent Comments</h2>
+
+<div id="bob">
 <?php
 $comments = array_reverse(getComments());
 foreach ($comments as $c) {
@@ -87,9 +95,9 @@ foreach ($comments as $c) {
     echo "<strong>" . htmlspecialchars($c['username']) . "</strong> wrote about CMPS " . htmlspecialchars($c['id']) . ":" . "<br>";
     echo nl2br(htmlspecialchars($c['comment'])) . "<br>";
     echo "<small>Posted on " . $c['createdAt'] . "</small>";
-    echo "</div><hr>";
+    echo "</div>";
 }
 ?>
-
+</div>
 </body>
 </html>
