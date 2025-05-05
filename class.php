@@ -68,10 +68,9 @@ foreach ($allCourses as $course) {
             <h2>Course not found.</h2>
             <?php endif; ?>
         </div>
-        <div id="comments">
-            <h1>Comments:</h1>
+       
+            
             <?php require_once('add.php'); ?>
-        </div>
     </div>
 </body>
 </html>

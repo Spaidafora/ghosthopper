@@ -3,10 +3,10 @@ body {
     background-color: #212121;
 }
 
-nav > div{
+nav{
     background-color: #CFE3E2;
     width: 100%;
-    
+    display: inline-block;
 }
 
 #logo{
@@ -14,6 +14,22 @@ nav > div{
     margin: auto;
     display: block;
     padding: 10px;
+    margin-top: -60px;
+}
+
+#navbtn{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.btn{
+    color:#6B7F4C;
+    font-size: 15pt;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+   
 }
 
 #container{
@@ -95,6 +111,98 @@ nav > div{
     font-size: 15pt;
     color: #212121;
     text-align: left;
+}
+
+/* Center the headers */
+h1, h2 {
+    text-align: center;
+}
+
+/* Form layout: name/id on left, comment box on right */
+#comments {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+/* Left side (Name and ID inputs) */
+#left {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Right side (Comment textarea) */
+#right {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Comment button centered */
+form input[type="submit"] {
+    display: block;
+    margin: 10px auto;
+}
+
+form input[type="text"] {
+    border: #1E6980;
+    border-width: 1pt;
+    border-style: solid;
+    padding: 10px;
+}
+
+textarea{
+    border: #1E6980;
+    border-width: 1pt;
+    border-style: solid;
+    padding: 10px;
+}
+
+label{
+    font-size: 14pt;
+}
+
+hr{
+    color: #1E6980;
+    width: 90%;
+}
+
+/* Recent Comments section (underneath the form) */
+#bob {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Each comment box */
+.comment {
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #1E6980;
+    color: white;
+    font-size: 14pt;
+}
+
+
+input[type="submit"] {
+    margin-top: 20px;
+    background-color: #1E6980;
+    color: white;
+    font-size: 15pt;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+   
 }
 
 #back{
