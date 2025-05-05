@@ -7,7 +7,16 @@ $postTarget = htmlspecialchars($_SERVER['REQUEST_URI']);
 $errors = [];
 $data = [];
 
+$courses = json_decode(file_get_contents('cmps.json'), true);
+
+// The course ids start with CMPS in the json file, so I am using substr to return the portion of     
+// string specified by the string and offset parameters 
+$exist = array_map(function($course) {
+    return substr($course['course_code'], -4);
+}, $courses);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // For testing purposes
     if (isset($_POST['dump_comments'])) {
         file_put_contents(COMMENT_FILE, json_encode([])); 
         $message = "All comments have been dumped.";
@@ -17,15 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $data['id'] = trim($_POST['id'] ?? '');
         $data['comment'] = trim($_POST['comment'] ?? '');
         
-/*
-        if (empty($data['username'])) {
-            $errors['username'] = "Username required.";
+        // So the user doesn't put 1234 or 123456789 as a course. >:(
+        if (!preg_match('/^\d{4}$/', $data['id'])) {
+            $errors['id'] = "<br>ID must be exactly 4 digits.</br>";
+        } else if (!in_array($data['id'], $exist)) {
+            $errors['id'] = "<br>Course ID not found.</br>";
         }
 
-        if (empty($data['comment'])) {
-            $errors['comment'] = "Comment required.";
-        }
-*/
         if (empty($errors)) {
             addComment($data);
             $data = [];
