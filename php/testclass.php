@@ -20,10 +20,10 @@ foreach ($allCourses as $course) {
 <head>
   <meta charset="UTF-8">
   <title><?php echo $courseTitle ? $courseTitle : "Course Not Found"; ?></title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<?php require_once("nav.html"); ?>
+<?php require_once("../nav.html"); ?>
 
 <div class="course-details">
   <?php if ($courseInfo): ?>

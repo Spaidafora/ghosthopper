@@ -21,11 +21,11 @@ foreach ($allCourses as $course) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="./style.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
     <title><?php echo $courseTitle ? $courseTitle : "Course Not Found"; ?></title>
 </head>
 <body>
-    <?php require_once("nav.html");?>
+    <?php require_once("../nav.html");?>
 
     <div id="deptClass">
         <h1><?php echo htmlspecialchars($courseInfo['title']) . " - " . htmlspecialchars($course['subject']); ?></h1>

@@ -1,0 +1,32 @@
+
+nav{
+    background-color: #CFE3E2;
+    width: 100%;
+    display: inline-block;
+}
+
+#logo{
+    width: 25%;
+    margin: auto;
+    display: block;
+    padding: 10px;
+    margin-top: -60px;
+}
+
+#navbtn{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.btn{
+    color:#6B7F4C;
+    font-size: 15pt;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+   
+}
+
+
+

@@ -7,7 +7,7 @@ $postTarget = htmlspecialchars($_SERVER['REQUEST_URI']);
 $errors = [];
 $data = [];
 
-$courses = json_decode(file_get_contents('cmps.json'), true);
+$courses = json_decode(file_get_contents('../cmps.json'), true);
 
 // The course ids start with CMPS in the json file, so I am using substr to return the portion of     
 // string specified by the string and offset parameters 
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <!--<title>Comment Section</title>-->
-    <link type="text/css" rel="stylesheet" href="./style.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 

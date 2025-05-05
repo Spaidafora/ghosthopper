@@ -40,13 +40,13 @@ function formatTimeRange($start, $end) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link type="text/css" rel="stylesheet" href="./style.css">
+  <link type="text/css" rel="stylesheet" href="../css/style.css">
   <title>
      <?php echo $q && isset($departments[$q]) ? $departments[$q]['dept'] . " Department" : "Department Not Found";?>
   </title>
 </head>
 <body>
-<?php require_once("nav.html");?>
+<?php require_once("../nav.html");?>
 
 <div id="deptClass">
 <?php if ($q && isset($departments[$q])): ?>

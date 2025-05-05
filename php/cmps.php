@@ -1,5 +1,5 @@
 <?php
-$jsonFile = 'cmps.json';
+$jsonFile = '../cmps.json';
 
 if (!file_exists($jsonFile)) {
     die("File not found.");
