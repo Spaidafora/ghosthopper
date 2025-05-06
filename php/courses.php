@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ghost-hopper</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <link type="text/css" rel="stylesheet" href="../css/courses.css">
 </head>
 <body>
+<?php require_once("../nav.html");?>
 <h1>Courses</h1>
 
- <div class=search> 
-
-    <form method="post">
-        <input type="text" placeholder="Search...">
-        <input type="submit"  name="submit" value="Search"/>
-    </form> 
-</div>
 
 <?php 
 

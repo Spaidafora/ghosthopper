@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ghost-hopper</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/id.css">
+    
 </head>
 <body>
   
+  <?php require_once("../nav.html");?>
   <h1>Course ID</h1>
-
 
 <?php 
 
@@ -29,7 +29,7 @@ $result = json_decode($apiUrl, true); //assoc array
 //print_r($result);
 
 
-// how to make it route to localhost/courses/id   ? 
+
 /*
 foreach ($result as $course){
     echo '<div class="subject">';
@@ -105,7 +105,7 @@ foreach($result as$course){
   echo '</table>'; 
   echo '</table>';
 
-  require_once('add.php');
+  //require_once('add.php');
   
 //http://localhost:8000/id.php?courseId=2020
 //node running in port 3000, can't run php there. 

@@ -17,12 +17,6 @@ const pool = new Pool({
 });
 
 
-
-
-
-
-
-
 async function testConnection(){
     try {
         const testResult = await pool.query ('SELECT NOW()');

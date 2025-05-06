@@ -2,11 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="./style.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
     <title>Class Hopper</title>
 </head>
 <body>
-    <?php require_once("nav.html");?>
+    <?php require_once("../nav.html");?>
     <div id="container">
         <a href="dept.php?q=cmps" class="cmps">CMPS</a>
         <a href="dept.php?q=math" class="math">Math</a>

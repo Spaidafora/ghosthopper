@@ -1,0 +1,61 @@
+
+nav{
+    background-color: #CFE3E2;
+    width: 100%;
+    display: inline-block;
+}
+
+#logo{
+    width: 25%;
+    margin: auto;
+    display: block;
+    padding: 10px;
+    margin-top: -60px;
+}
+
+#navbtn{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.btn{
+    color:#6B7F4C;
+    font-size: 15pt;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+   
+}
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+  
+  
+  
+
+
+
