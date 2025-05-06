@@ -79,7 +79,8 @@ function formatTimeRange($start, $end) {
   <?php endif; ?>
 
   <a href="/" id="back" onclick="javascript:event.target.port=3000">Search all courses</a> <br>
-  <a href="grid.php" id="back" >Back to Departments</a>
+  <a href="grid.php" id="back" >Back to Departments</a> <br>
+  <a href="http://localhost:8000/php/test.php?q=cmps" id="back">Simulation</a>
 </div>
 
 </body>
